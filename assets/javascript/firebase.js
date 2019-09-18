@@ -24,9 +24,8 @@ var uiConfig = {
         var providerId = authResult.additionalUserInfo.providerId;
         var operationType = authResult.operationType;
         // Do something with the returned AuthResult.
-        // Return type determines whether we continue the redirect automatically
-        // or whether we leave that to developer to handle.
-        return true;
+        // return true for conditional auto-redirect, false for no redirect
+        return false;
     },
     signInFailure: function(error) {
         // Some unrecoverable error occurred during sign-in.
