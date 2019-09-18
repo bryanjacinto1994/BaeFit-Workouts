@@ -89,11 +89,38 @@ firebase.auth().onAuthStateChanged(function(user) {
             // log accesstoken
             console.log(accessToken)
         });
-    }
-    else {
-        // do something if user fails to login
+        // change div to let user know login was successful
+        $("#loginui").html("<p>Login was successful!");
+        setTimeout(function() {
+            $("#exampleModal").modal("hide");
+        }, 3000)
+        // hide login button and show logout button
+        $("#loginBtn").addClass("d-none");
+        $("#logoutBtn").removeClass("d-none");
     }
 }, function(error) {
     // do something when an error occurs
     console.log(error);
+})
+
+// logout button click listener
+$("#logoutBtn").on("click", function() {
+    // sign out!
+    firebase.auth().signOut();
+    // show modal
+    $("#exampleModal").modal("show");
+    $("#loginui").html("You have logged out!")
+    // auto hide modal after 3 seconds
+    setTimeout(function() {
+        // hide modal
+        $("#exampleModal").modal("hide");
+        // set timer before changing login modal for fluid transition
+        setTimeout(function() {
+            // reset the login modal
+            $("#logoutBtn").addClass("d-none");
+            $("#loginBtn").removeClass("d-none");
+            $("#loginui").html("");
+            ui.start('#loginui', uiConfig);
+        }, 1000);
+    }, 3000);
 })
