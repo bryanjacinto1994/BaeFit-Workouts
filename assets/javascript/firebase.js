@@ -79,3 +79,22 @@ var uiConfig = {
 var ui = new firebaseui.auth.AuthUI(firebase.auth());
 // The start method will wait until the DOM is loaded.
 ui.start('#loginui', uiConfig);
+
+// do something when user auth state changes
+firebase.auth().onAuthStateChanged(function(user) {
+    // log user info
+    console.log(user)
+    if (user) {
+        // User is signed in.
+        user.getIdToken().then(function(accessToken) {
+            // log accesstoken
+            console.log(accessToken)
+        });
+    }
+    else {
+        // do something if user fails to login
+    }
+}, function(error) {
+    // do something when an error occurs
+    console.log(error);
+})
