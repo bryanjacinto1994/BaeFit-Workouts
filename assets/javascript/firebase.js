@@ -82,12 +82,10 @@ ui.start('#loginui', uiConfig);
 // do something when user auth state changes
 firebase.auth().onAuthStateChanged(function(user) {
     // log user info
-    console.log(user)
     if (user) {
         // User is signed in.
         user.getIdToken().then(function(accessToken) {
             // log accesstoken
-            console.log(accessToken)
         });
         // change div to let user know login was successful
         $("#loginui").html("<p>Login was successful!");
@@ -125,13 +123,5 @@ $("#logoutBtn").on("click", function() {
     }, 3000);
 })
 
+// make a pointer to database
 var db = firebase.database();
-
-db.ref().child("workouts").once("value", function(snapshot) {
-    snapshot.forEach(function(childSnapshot) {
-        console.log("-----Workout-----");
-        console.log("Name: " + childSnapshot.val().workoutname);
-        console.log("Activity: " + childSnapshot.val().activity);
-        console.log("Duration: " + childSnapshot.val().time);
-    })
-})
