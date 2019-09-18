@@ -32,3 +32,9 @@
     left: 900px;
     
 }
+
+#button1,
+#button2{
+    position: absolute;
+    top: 80px;
+}
