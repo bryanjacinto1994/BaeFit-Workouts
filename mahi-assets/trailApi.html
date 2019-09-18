@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Trail recommendations</title>
+    </head>
+    <body>
+        <h3 id="name">
+            <!-- Place holder for name of trails nearby -->
+        </h3>
+        <h4 id="summary">
+            <!-- Place holder for summary on trails nearby -->
+        </h4>
+
+        <div id="image">
+            <!-- Place holder for images of trails nearby -->
+            <table class="table"id="tableDetails">
+                    <thead>
+                      <tr>
+                          <!-- First table row headers -->
+                        <th scope="col">Name</th>
+                        <th scope="col">Scenic View</th>
+                        <th scope="col">Summary</th>
+                      </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                        <!-- Trail details are updated here -->
+
+                    </tbody>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+            // My query URL to get nearby trails ... Maximum distance in miles
+            var queryURL = "https://www.hikingproject.com/data/get-trails?lat=37.7912166&lon=-122.3943199&maxDistance=10&key=200595352-77e13f2d759dbcd29bbde8b635ba9b65";
+            // Querying the base URL to get required response using AJAX method
+            $.ajax({
+                url : queryURL,
+                method : "GET"
+            }).then(function(response){
+                console.log(response);
+                // Iterating through the response array
+                for(var i=0; i<5; i++){
+
+                $("#name").append(response.trails[i].name + "<br>");
+                $("#summary").append(response.trails[i].summary + "<br>");
+
+                // Creating an image tag using in JQuery
+                var imageTag = $("<img>");
+                // Assigning attributes to the image tag created
+                imageTag.attr("src", response.trails[i].imgMedium);
+                imageTag.attr("alt","image" + i);
+                imageTag.attr("width","150px");
+                imageTag.attr("height","150px");
+                // Appending image tag to div
+                $("#image").append(imageTag);
+                // var table = $("<tr>");
+                // table.attr("id","rowId");
+                // table.append("<td>" + response.trails[i].name + "</td>");
+                // table.append("<td>" + response.trails[i].imgMedium + "</td>");
+                // table.append("<td>" + response.trails[i].summary + "</td>");
+                // $("#tableBody").append(table);
+                
+
+
+
+                }
+
+
+            });
+        </script>
+    </body>
+</html>

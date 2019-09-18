@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Calculator</title>
+  </head>
+  <body>
+    <h3>Calorie Calculator</h3>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+    <!-- Form to get inputs from user -->
+    <form>
+            <div class="form-group">
+              <label for="weight">Enter your weight</label>
+              <input type="text" class="form-control" id="weight" aria-describedby="emailHelp" placeholder="in kgs">
+            </div>
+            <button type="submit" class="btn btn-primary bg-dark"id="calculateBtn">Calculate</button>
+          </form>
+          <!-- Place holder for location -->
+          <h3 id="domLocation"></h3>
+          <!-- Place holder for latitude -->
+          <h3 id="startLat"></h3>
+          <!-- Place holder for Longitude -->
+          <h3 id="startLong"></h3>
+          <!-- Place holder for distance -->
+          <h3 id="distance"></h3>
+    <!-- Javascript for calculations -->
+    <script>
+        // Variable declarations
+        var weight;
+        var diff;
+        var startLat;
+        var startLong;
+        var endLat;
+        var endLong;
+        var location;
+        var distance;
+        var time = 50;
+
+        // Ready function runs only when html page is fully loaded
+        $(document).ready(function(){
+        // This function is executed on click of calculate button
+        $("#calculateBtn").on("click",function(event){
+            // Prevents the page from refreshing on click of calculate   button
+            event.preventDefault();
+            // Getting user input and assigning to a variable
+            weight = $("#weight").val().trim();
+            // Calorie is calculated based on duration in minutes * (MET - Metabolic equivalent of task * 3.5 * weight in kgs)
+            var calorie = time * (4 * 3.5 * weight) / 200;
+            console.log(calorie);
+            // Calling function that calculates distance
+            calcGeoLocation();
+        });
+
+            // Function to calculate current location of user
+            function calcGeoLocation(){
+            if(navigator.geolocation){
+                navigator.geolocation.getCurrentPosition(showPosition);
+            }
+            else{
+                location = "Location not found";
+            }
+        }
+
+        function showPosition(position){
+            // Pushing the value to the DOM
+            $("#domLocation").text("Latitude : " + position.coords.latitude + "Longitude : " + position.coords.longitude);
+            startLat = position.coords.latitude;
+            startLong = position.coords.longitude;
+            calcDistance(startLat, startLong);
+        }
+            
+        // Function to calculate distance
+        function calcDistance(startLat, startLong){
+            // Pushing values to DOM
+            $("#startLat").text(startLat);
+            $("#startLong").text(startLong);
+            // Hardcoded values as of now
+            endLat = 67.7911368;
+            endLong = -122.39393239999998;
+            
+            // checking if both start and end points are same
+            if((startLat === endLat) && (startLong === endLong)){
+                distance = 0;
+                console.log(distance);
+            }
+            else{
+                var calcStartLat = Math.PI * startLat/180;
+                var calcEndLat = Math.PI * endLat/180;
+                var diffLong = startLong - endLong;
+                var calcDiffLong = Math.PI * diffLong/180;
+                distance = Math.sin(calcStartLat) * Math.sin(calcEndLat) + Math.cos(calcStartLat) * Math.cos(calcEndLat) * Math.cos(calcDiffLong);
+                if(distance > 1){
+                    distance = 1;
+                }
+                distance = Math.acos(distance);
+                distance = distance * 180/Math.PI;
+                distance = distance * 60 * 1.1515;
+                $("#distance").text("Distance is " + distance + "miles");
+
+            }
+            
+
+
+        }
+
+    });
+        
+
+    </script>
+</body>
+</html>
