@@ -124,3 +124,14 @@ $("#logoutBtn").on("click", function() {
         }, 1000);
     }, 3000);
 })
+
+var db = firebase.database();
+
+db.ref().child("workouts").once("value", function(snapshot) {
+    snapshot.forEach(function(childSnapshot) {
+        console.log("-----Workout-----");
+        console.log("Name: " + childSnapshot.val().workoutname);
+        console.log("Activity: " + childSnapshot.val().activity);
+        console.log("Duration: " + childSnapshot.val().time);
+    })
+})
