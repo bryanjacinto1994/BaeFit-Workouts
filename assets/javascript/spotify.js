@@ -1,11 +1,11 @@
-$("iframe").on("mouseover", function() {
+$("#spotify").on("mouseenter", function() {
   $("#spotify").animate({
     "right": "0px",
   });
 })
 
-$("iframe").on("mouseout", function() {
+$("#spotify").on("mouseleave", function() {
   $("#spotify").animate({
-    "right": "-295px",
+    "right": "-300px",
   })
 })
