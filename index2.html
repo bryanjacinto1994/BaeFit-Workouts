@@ -48,15 +48,11 @@
                     User
                   </a>
 
-                  <button type="button" id="loginBtn" class="btn bg-dark" data-toggle="modal" data-target="#exampleModal"
+                  <button type="button" class="btn bg-dark" data-toggle="modal" data-target="#exampleModal"
                     style="color: white;">
                     Login
                   </button>
 
-                  <button type="button" id="logoutBtn" class="btn bg-dark d-none" data-toggle="modal" data-target="#exampleModal"
-                  style="color: white;">
-                  Logout
-                </button>
                   <!-- Modal -->
                   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
                     aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -69,7 +65,28 @@
                           </button>
                         </div>
                         <div class="modal-body">
+                          <form>
+                            <div class="form-group row">
+                              <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+                              <div class="col-sm-10">
+                                <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                              </div>
+                            </div>
+                            <div class="form-group row">
+                              <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+                              <div class="col-sm-10">
+                                <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                              </div>
+                            </div>
+                            <p>Don't have an account yet? <a class="container" href="#" role="button" data-slide="prev">
+                                Sign up!
+                              </a></p>
                             <div id="loginui"></div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn bg-dark" data-dismiss="modal"
+                            style="color: white;">Close</button>
+                          <button type="button" class="btn bg-dark" style="color: white;">Login</button>
                         </div>
                       </div>
                     </div>
@@ -124,36 +141,12 @@
 
     <hr>
     <br>
-    <!-- Third Row -->
-    <div class="row">
-      <div class="col-md-5">
-        <div class="container1">
-          <img
-            src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-            class="image1 d-block w-100 rounded shadow-lg p-3 mb-5 bg-dark rounded" alt="party">
-          <div class="middle">
-            <a href= "index1.html" style ="color: white;">
-           <button class="bg-dark rounded" id="button1" style="color: white;"><a href= "index1.html" style ="color: white;">Start Your Workout!</a></button>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-2"></div>
-      <div class="col-md-5">
-        <div class="container2">
-          <img
-            src="https://images.unsplash.com/photo-1544899610-6287164c6fe1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
-            class="image2 d-block w-100 rounded shadow-lg p-3 mb-5 bg-dark rounded" alt="party">
-          <div class="middle">
-            <button class="bg-dark rounded" id="button2" style="color: white;"><a href= "index2.html" style ="color: white;">Start Jogging!</a></button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
+  
 
 
   </div>
+
+
 
 
 
