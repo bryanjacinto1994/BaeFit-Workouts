@@ -1,3 +1,11 @@
+body {
+    background-image: url("https://www.mcahamilton.org/image/blog.visme.co/wp-content/uploads/2017/07/50-Beautiful-and-Minimalist-Presentation-Backgrounds-08.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: 'Chilanka', cursive;
+}
 .image {
     opacity: 1;
     display: block;
@@ -39,3 +47,13 @@
     width: 410px;
    
 }
+
+#imgDiv:hover {
+    opacity: 0.7;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+
