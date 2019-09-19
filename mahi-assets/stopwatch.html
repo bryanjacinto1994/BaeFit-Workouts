@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Stopwatch</title>
+  </head>
+  <body>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+    <!-- Card header and body -->
+    <!-- creating rows -->
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+    <div class="card mb-3 card border-primary mb-3">
+            <img class="card-img-top" src="stopwatch.gif" alt="stopwatch">
+            <div class="card-body row justify-content-center">
+                <!-- Separate row -->
+                <div class="row">
+                    <div class="col-md-12">
+                 <h3 class="card-title" id="displayTime">00:00</h3>
+                </div>
+                </div>
+            </div>
+                <div class="card-body row justify-content-center">
+                <!-- Separate row -->
+                <div class="row">
+                    <div class="col-md-12">
+                <button type="button" class="card-text btn btn btn-outline-primary align-center btn-lg"id="startBtn">START</button>&nbsp
+                <button type="button" class="card-text btn btn-outline-danger align-center btn-lg"id="stopBtn">STOP</button>
+            </div>
+            </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2"></div>
+        </div>
+
+        <!-- Javascript for functioning of stopwatch -->
+        <script>
+            // Variable declarations
+            var interval;
+            var time = 0;
+            var now;
+            var minutes;
+            var seconds;
+            // Below function runs only when html page is fully loaded
+            $(document).ready(function(){
+
+                // Function is executed when start button is clicked
+                $("#startBtn").on("click",function(){
+                    // Calls count function every one second
+                    $("#displayTime").html("00:00");
+                    clearInterval(interval);
+                    interval = setInterval(count, 1000);
+
+                });
+
+                // This function increments timer
+                function count(){
+                    time = time + 1;
+                    now = timeFormat(time);
+                    // Time is displayed
+                    $("#displayTime").text(now);
+                }
+
+                // Function that formats time
+                function timeFormat(time){
+                    minutes = Math.floor (time / 60); // if time = 60 then, math.floor(60/60) ===> 1
+                    seconds = time - (minutes * 60); // 60 - (1 * 60) ===> 0
+
+                    // If seconds is less than zero, we concantenate 0 with seconds on timer
+                    if(seconds < 10){
+                        seconds = "0" + seconds;
+                    }
+
+                    // Minutes zero, then minutes in timer is set to "00"
+                    if(minutes === 0){
+                        minutes = "00";
+                    }
+
+                    // If minutes is less than 10 then concantenate "0" and minutes in timer
+                    else if(minutes < 10){
+                        minutes = "0" + minutes;
+                    }
+
+                    // Return calculated format to variable "now"
+                    return minutes + ":" + seconds;
+                }
+
+                // Function is executed when stop button is clicked
+                $("#stopBtn").on("click",function(){
+                    // Clearinterval function is used to stop timer
+                    clearInterval(interval);
+
+                });
+
+            });
+        </script>
+
+
+</body>
+</html>
+
+
+
