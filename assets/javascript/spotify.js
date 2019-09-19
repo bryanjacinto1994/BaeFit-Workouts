@@ -9,3 +9,15 @@ $("#spotify").on("mouseleave", function() {
     "right": "-300px",
   })
 })
+
+$("#slideLinks").on("mouseenter", function() {
+  $("#slideLinks").animate({
+    "left": "0px",
+  });
+})
+
+$("#slideLinks").on("mouseleave", function() {
+  $("#slideLinks").animate({
+    "left": "-138px",
+  })
+})
