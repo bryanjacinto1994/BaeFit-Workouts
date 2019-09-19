@@ -19,6 +19,33 @@
     <div class="text-center">
       <a href= "index.html" style ="color: white;"><img src="logo1_transparent.png" class="justify-content-center"></a>
     </div>
+    <!-- Slide Bar Links -->
+    <div id="slideLinks" class="position-fixed" style="width: 200px; left: -138px; top: 30%">
+      <div class="row">
+        <div class="col-md-8 bg-dark m-0 p-0">
+          <a href="index.html">
+            <button type="button" class="btn bg-dark w-100 mx-auto p-3" style="color: white;">
+              Home
+            </button>
+          </a>
+          <hr class="m-0">
+          <a href="index1.html">
+            <button type="button" class="btn bg-dark w-100 mx-auto p-3" style="color: white;">
+              Workout
+            </button>
+          </a>
+          <hr class="m-0">
+          <a href="index2.html">
+            <button type="button" class="btn bg-dark w-100 mx-auto p-3" style="color: white;">
+              Jogging
+            </button>
+          </a>
+        </div>
+        <div class="col-md-4 m-0 p-0">
+            <p class="bg-dark text-white p-3">Links</p>
+        </div>
+      </div>
+    </div>
     <!-- First Row -->
     <div class="row">
       <div class="col-md-12">
@@ -148,7 +175,10 @@
 
   </div>
 
-
+  <div id="spotify" class="position-fixed" style="top: 30%; right: -300px">
+      <img src="./assets/images/spotify.png" class="float-left" height="35px">
+      <iframe src="https://open.spotify.com/embed/playlist/48Ngr8DUGGxAd7xQjFNXDG" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+    </div>
 
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src="https://cdn.firebase.com/libs/firebaseui/4.2.0/firebaseui.js"></script>
@@ -163,6 +193,7 @@
     crossorigin="anonymous"></script>
   <script src="./assets/javascript/firebase.js"></script>
   <script src="./assets/javascript/weather.js"></script>
+  <script src="./assets/javascript/spotify.js"></script>
 </body>
 
 </html>
