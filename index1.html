@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="test.css">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/4.2.0/firebaseui.css">
+  <title>BaeFit</title>
+</head>
+
+<body>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+  <div class="container">
+    <!-- Header -->
+    <div class="text-center">
+      <a href= "index.html"><img src="logo1_transparent.png" class="justify-content-center"></a>
+    </div>
+    <!-- First Row -->
+    <div class="row">
+      <div class="col-md-12">
+        <nav class="navbar navbar-dark bg-dark navbar-inverse navbar-fixed-top shadow-lg p-3 mb-5 bg-dark rounded">
+          <div class="pos-f-t">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    User
+                  </a>
+
+                  <button type="button" class="btn bg-dark" data-toggle="modal" data-target="#exampleModal"
+                    style="color: white;">
+                    Login
+                  </button>
+
+                  <!-- Modal -->
+                  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+                        </div>
+                        <div class="modal-body">
+                         
+                            <div id="loginui"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            </li>
+          </div>
+
+        </nav>
+        </nav>
+      </div>
+    </div>
+
+    <hr>
+
+    
+    <!-- Second Row -->
+    <div class="row">
+      <div class="col-md-5">
+        <div class="container1">
+          <img
+            src="https://images.unsplash.com/photo-1530021545655-276a6d4dc6ad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+            class="image1 d-block w-100 rounded shadow-lg p-3 mb-5 bg-dark rounded" alt="party" style="width: 300px; height: 300px;">
+          <div class="middle">
+            <button type="button" class="bg-dark rounded" data-toggle="modal" data-target="#exampleModalCenter" id="button1" style="color: white;">Stretch</button>
+          </div>
+          <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalCenterTitle">Stretch</h5>
+                </div>
+                <div class="modal-body overflow-auto" style="height:20rem">
+                    <h5>Quad Stretches</h5>
+                    <p>Time: 30 seconds</p>
+                    <h5>Instructions</h5>
+                    <ul>
+                      <li>Keep your knees as close together as possible</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary bg-dark text-white" data-dismiss="modal">Close</button>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2"></div>
+      <div class="col-md-5">
+        <div class="container2">
+          <img
+            src="https://img.maximummedia.ie/joe_co_uk/eyJkYXRhIjoie1widXJsXCI6XCJodHRwOlxcXC9cXFwvbWVkaWEtam9lY291ay5tYXhpbXVtbWVkaWEuaWUuczMuYW1hem9uYXdzLmNvbVxcXC93cC1jb250ZW50XFxcL3VwbG9hZHNcXFwvMjAxOFxcXC8wOVxcXC8yODE2MzYxOFxcXC9TY3JlZW4tU2hvdC0yMDE4LTA5LTI4LWF0LTE2LjM1LjI3LnBuZ1wiLFwid2lkdGhcIjo3NjcsXCJoZWlnaHRcIjo0MzEsXCJkZWZhdWx0XCI6XCJodHRwczpcXFwvXFxcL3d3dy5qb2UuY28udWtcXFwvYXNzZXRzXFxcL2ltYWdlc1xcXC9qb2Vjb3VrXFxcL25vLWltYWdlLnBuZz9pZD0yNjRhMmRiZTM3MGYyYzY3NWZjZFwiLFwib3B0aW9uc1wiOltdfSIsImhhc2giOiI5MmI5MDA0ZjliNzJkNWNjZGE5ZGU4N2RiMmY1ZDI2NjMxOTQwOWEzIn0=/screen-shot-2018-09-28-at-16-35-27.png"
+            class="image2 d-block w-100 rounded shadow-lg p-3 mb-5 bg-dark rounded" alt="party" style="width: 300px; height: 300px;">
+          <div class="middle">
+            <button type="button" class="bg-dark rounded" data-toggle="modal" data-target="#exampleModalCenter1" id="button2" style="color: white;">Chest</button>
+          </div>
+          <div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalCenterTitle">Chest</h5>
+                </div>
+                <div class="modal-body overflow-auto" style="height:20rem">
+                    <h5>Barbell Chest Press</h5>
+                    <p>3 Sets of 15 Repetitions</p>
+                    <h5>Instructions</h5>
+                    <ul>
+                      <li>Align the barbell on your nipple line every time you go up and down</li>
+                      <li>3 seconds going up, and 3 seconds going down</li>
+                    </ul>
+                    <hr>
+                    <h4 class="text-center">Rest: 30 seconds</h4>
+                    <hr>
+                    <h5>Dumbbell Chest Press</h5>
+                    <p>3 Sets of 15 Repetitions</p>
+                    <h5>Instructions</h5>
+                    <ul>
+                      <li>Lie with your head and shoulders supported by the bench and your feet flat on the floor.
+                          Hold the dumbbells directly above your chest, palms facing each other,
+                          then lower the weights in an arc out to the sides as far as is comfortable.
+                          Use your pectoral muscles to reverse the movement back to the start.
+                          4Keep a slight bend in your elbows throughout and don’t arch your back.</li>
+                    </ul>
+                    <hr>
+                    <h4 class="text-center">Rest: 30 seconds</h4>
+                    <hr>
+                    <h5>Push-ups</h5>
+                    <p>10 Sets of 10 Repetitions</p>
+                    <h5>Instructions</h5>
+                    <ul>
+                      <li>Go to push-up position and make sure you go down to the point where your
+                          elbow makes a 90 degree angle, then go all the way up locking your elbow</li>
+                      <li>3 seconds going up, and 3 seconds going down</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary bg-dark text-white" data-dismiss="modal">Close</button>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Third Row -->
+
+    <div class="row">
+            <div class="col-md-5">
+              <div class="container1">
+                <img
+                  src="https://legionathletics.com/wp-content/uploads/2019/05/back-workouts-featured.jpg"
+                  class="image1 d-block w-100 rounded shadow-lg p-3 mb-5 bg-dark rounded" alt="party" style="width: 300px; height: 300px;">
+                <div class="middle">
+                  <button type="button" class="bg-dark rounded" data-toggle="modal" data-target="#exampleModalCenter2"  id="button1" style="color: white;">Back</button>
+                </div>
+                <div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalCenterTitle">Back</h5>
+                      </div>
+                      <div class="modal-body overflow-auto" style="height:20rem">
+                          <h5>Pull-ups</h5>
+                            <p>5 Sets of 8 Repetitions</p>
+                            <h5>Instructions</h5>
+                            <ul>
+                              <li>Hang on the bar and pull yourself up to the point where your chin is past the bar</li>
+                              <li>3 seconds going up, and 3 seconds going down</li>
+                            </ul>
+                            <hr>
+                            <h4 class="text-center">Rest: 30 seconds</h4>
+                            <hr>
+                            <h5>Lat-Pull downs</h5>
+                            <p>3 Sets of 15 Repetitions</p>
+                            <h5>Instructions</h5>
+                            <ul>
+                              <li>With your back straight and chest up high, 
+                                  pull down to your upper chest and squeeze your back together and slowly go 
+                                  all the way up with your arms extended so you will feel the stretch, then repeat</li>
+                            </ul>
+                            <hr>
+                            <h4 class="text-center">Rest: 30 seconds</h4>
+                            <hr>
+                            <h5>Cable Rows</h5>
+                            <p>3 Sets of 10 Repetitions</p>
+                            <h5>Instructions</h5>
+                            <ul>
+                              <li>Keep your lower back straight and lean back to 45 degree angle</li>
+                              <li>3 seconds going up, and 3 seconds going down</li>
+                            </ul>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary bg-dark text-white" data-dismiss="modal">Close</button>
+                            
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <div class="col-md-2"></div>
+            <div class="col-md-5">
+              <div class="container2">
+                <img
+                  src="https://cdn2.stylecraze.com/wp-content/uploads/2014/09/3.-Lateral-Raises.jpg.webp"
+                  class="image2 d-block w-100 rounded shadow-lg p-3 mb-5 bg-dark rounded" alt="party" style="width: 300px; height: 300px;">
+                <div class="middle">
+                  <button type="button" class="bg-dark rounded" data-toggle="modal" data-target="#exampleModalCenter3" id="button2" style="color: white;">Shoulders</button>
+                </div>
+                <div class="modal fade" id="exampleModalCenter3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalCenterTitle">Shoulders</h5>
+                      </div>
+                      <div class="modal-body overflow-auto" style="height:20rem">
+                          <h5>Dumbbell Shoulder Press</h5>
+                            <p>5 Sets of 12 Repetitions</p>
+                            <h5>Instructions</h5>
+                            <ul>
+                              <li>Start at 90 degree angle aligning the dumbbell with your ears and push up overhead and slowly go back down to starting position and repeat</li>
+                              <li>3 seconds going up, and 3 seconds going down</li>
+                            </ul>
+                            <hr>
+                            <h4 class="text-center">Rest: 30 seconds</h4>
+                            <hr>
+                            <h5>Cable Face-Pull</h5>
+                            <p>5 Sets of 15 Repetitions</p>
+                            <h5>Instructions</h5>
+                            <ul>
+                              <li>Pull the cable towards your forehead and elbows back as possible.
+                                  Make sure you squeeze your deltoids when you pull and slowly go back all the way out with elbows extended
+                              </li>
+                            </ul>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary bg-dark text-white" data-dismiss="modal">Close</button>
+                        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Fourth Row -->
+
+          <div class="row">
+                <div class="col-md-5">
+                  <div class="container1">
+                    <img
+                      src="https://images.unsplash.com/photo-1567598508481-65985588e295?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+                      class="image1 d-block w-100 rounded shadow-lg p-3 mb-5 bg-dark rounded" alt="party" style="width: 300px; height: 300px;">
+                    <div class="middle">
+                      <button type="button" class="bg-dark rounded" data-toggle="modal" data-target="#exampleModalCenter4"  id="button1" style="color: white;">Legs</button>
+                    </div>
+                    <div class="modal fade" id="exampleModalCenter4" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalCenterTitle">Legs</h5>
+                          </div>
+                          <div class="modal-body overflow-auto" style="height:20rem">
+                              <h5>Barbell Squats</h5>
+                                <p>5 Sets of 8 Repetitions</p>
+                                <h5>Instructions</h5>
+                                <ul>
+                                  <li>With your feet shoulder width apart, have your lower back straight and chest up high. Squat all the way down until your glutes is aligned with your knee, then go back up</li>
+                                </ul>
+                                <hr>
+                                <h4 class="text-center">Rest: 30 seconds</h4>
+                                <hr>
+                                <h5>Leg Extension</h5>
+                                <p>3 Sets of 15 Repetitions</p>
+                                <h5>Instructions</h5>
+                                <ul>
+                                  <li>Lean back with your back straight and push up and squeeze for 3 seconds and slowly go back down 3 seconds squeezing your quadriceps</li>
+                                </ul>
+                                <hr>
+                                <h4 class="text-center">Rest: 30 seconds</h4>
+                                <hr>
+                                <h5>Lying Leg Curls</h5>
+                                <p>3 Sets of 15 Repetitions</p>
+                                <h5>Instructions</h5>
+                                <ul>
+                                  <li>Laying down on your stomach and head neutral, push up with your ankle slowly squeezing your hamstrings and slowly go down for 3 seconds</li>
+                                </ul>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary bg-dark text-white" data-dismiss="modal">Close</button>
+                            
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-2"></div>
+                <div class="col-md-5">
+                  <div class="container2">
+                    <img
+                      src="https://skinnyms.com/wp-content/uploads/2014/08/11-Awesome-Arm-Toning-Workouts1.jpg"
+                      class="image2 d-block w-100 rounded shadow-lg p-3 mb-5 bg-dark rounded" alt="party" style="width: 300px; height: 300px;">
+                    <div class="middle">
+                      <button type="button" class="bg-dark rounded" data-toggle="modal" data-target="#exampleModalCenter5" id="button2" style="color: white;">Arms (Biceps and Triceps)</button>
+                    </div>
+                    <div class="modal fade" id="exampleModalCenter5" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalCenterTitle">Arms (Biceps/Triceps)</h5>
+                          </div>
+                          <div class="modal-body overflow-auto" style="height:20rem">
+                              <h5>Dumbbell Bicep Curls</h5>
+                                <p>3 Sets of 12 Repetitions</p>
+                                <h5>Instructions</h5>
+                                <ul>
+                                  <li>With your elbows in, back straight and head neutral, slowly go up focusing on squeezing your biceps then hold it for 1-2 seconds, then slowly go all the way down still squeezing the biceps until arm is fully extended</li>
+                                </ul>
+                                <hr>
+                                <h4 class="text-center">Rest: 30 seconds</h4>
+                                <hr>
+                                <h5>Dumbbell Seated Overhead Triceps Extension</h5>
+                                <p>3 Sets of 12 Repetitions</p>
+                                <h5>Instructions</h5>
+                                <ul>
+                                  <li>Hold one dumbbell up over your head with your hand placed on the top of the dumbbell and position it behind your head. Slowly 
+                                      go down 90 degrees with the dumbbell behind your head and slowly go back all the way up squeezing your triceps</li>
+                                </ul>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary bg-dark text-white" data-dismiss="modal">Close</button>
+                            
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Fifth Row -->
+
+
+
+  </div>
+
+  <div id="spotify" class="position-fixed" style="top: 30%; right: -300px">
+    <img src="./assets/images/spotify.png" class="float-left" height="35px">
+    <iframe src="https://open.spotify.com/embed/playlist/48Ngr8DUGGxAd7xQjFNXDG" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+  </div>
+
+
+
+  <script src="https://cdn.firebase.com/libs/firebaseui/4.2.0/firebaseui.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-app.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-auth.js"></script>
+ <script src="./assets/javascript/firebase.js"></script>
+ <script src="./assets//javascript/spotify.js"></script>
+</body>
+
+</html>
