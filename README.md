@@ -43,8 +43,6 @@ A site that combines exercising with other aspects to make it more enjoyable. Th
 - Gained a lot of debugging experience while merging files
 - Learned about github collaboration using merge and different branches.
 
-## Site Picture:
-
 
 ## Code Snippet:
 
