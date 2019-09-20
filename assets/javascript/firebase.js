@@ -112,14 +112,17 @@ $("#logoutBtn").on("click", function() {
     setTimeout(function() {
         // hide modal
         $("#exampleModal").modal("hide");
+        $("#logoutBtn").addClass("d-none");
+        $("#loginBtn").removeClass("d-none");
         // set timer before changing login modal for fluid transition
         setTimeout(function() {
             // reset the login modal
-            $("#logoutBtn").addClass("d-none");
-            $("#loginBtn").removeClass("d-none");
             $("#loginui").html("");
-            ui.start('#loginui', uiConfig);
-        }, 1000);
+            setTimeout(function() {
+                ui.start('#loginui', uiConfig);
+            }, 1000)
+            
+        }, 2000);
     }, 3000);
 })
 
