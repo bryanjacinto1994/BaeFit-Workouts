@@ -1,15 +1,27 @@
 # BaeFit
 
-## Summary
+## Links:
+Deployed Website: <br> https://bryanjacinto1994.github.io/Project-One/
+<br>
+Github Repository: <br> https://github.com/bryanjacinto1994/Project-One
+## Images:
+
+![Site](assets/images/BaeFitHome.png)
+![Site](assets/images/BaeFitWorkout.png)
+![Site](assets/images/BaeFitTrails.png)
+
+
+## Summary:
 A site that combines exercising with other aspects to make it more enjoyable. The workouts are designed for everyone, from beginners to veterans. Trail API finds scenic jogging routes for runners!
 
 ### **Highlights:**
 - Firebase Authentication
 - Trail / Weather API
-- Modals
+- Workout guides popup via Modals
 
 
-## Technologies Used
+
+## Technologies Used:
 - HTML
 - Bootstrap/CSS
 - Javascript/jQuery
@@ -20,22 +32,24 @@ A site that combines exercising with other aspects to make it more enjoyable. Th
 - GitHub
 - VSCode
 
-## Goals
+## Goals:
 - Utilize Firebase Database more (initially we planned to store a lot of data in here, but time restraints prevented us from doing so)
 - Fully Interface Spotify/Other Music Streaming
 
-## Learning Experience
+## Learning Experience:
 - Learned about Spotify SDK
 - Learned about Firebase Authentication
 - Learned about different APIs
 - Gained a lot of debugging experience while merging files
+- Learned about github collaboration using merge and different branches.
 
-## Site Picture
+## Site Picture:
 
 
-## Code Snippet
+## Code Snippet:
 
-```
+FireBase:
+```javascript
 // do something when user auth state changes
 firebase.auth().onAuthStateChanged(function(user) {
     // log user info
@@ -83,10 +97,8 @@ $("#logoutBtn").on("click", function() {
     }, 3000);
 })
 ```
-//***************************************************************************************************************************
-//                              Functionality of Trail API
-//***************************************************************************************************************************
-```
+ Functionality of Trail API:
+```javascript
 function apiCall(startLat, startLong){
         // Query URL that retrieves data using latitude and longitude
         queryURL = "https://www.hikingproject.com/data/get-trails?lat=" + startLat + "&lon=" + startLong + "&maxDistance=10&key=200595352-77e13f2d759dbcd29bbde8b635ba9b65";
@@ -122,11 +134,50 @@ function apiCall(startLat, startLong){
                    $("#imgDiv").append(newDiv);
                 }
 ```
+Weather API :
 
-## Links
-Live Page: https://bryanjacinto1994.github.io/Project-One<br>
-Repo: https://github.com/bryanjacinto1994/Project-One<br>
-GitHub:
-- Bryan: https://github.com/bryanjacinto1994
-- Mahisha: https://github.com/Mahi-Mani
-- Kerwin: https://github.com/seiretsym
+```javascript
+// declare global variable to store latitude and longitude
+var lat,
+    lon;
+
+// prompt user for geolocation permission
+if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+        // set lat and lon
+        lat = position.coords.latitude;
+        lon = position.coords.longitude;
+        weather();
+    });
+} else {
+    console.log("Geolocation not supported in browser!")
+}
+
+// call openweathermap for deets!
+function weather(){
+    var APIKey = "96f902ee5cbadb67440defd501103a74";
+    var queryURL = "https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&units=imperial&appid=" + APIKey;
+
+$.ajax({
+    url: queryURL,
+    method: "GET"
+})
+.then(function(response){
+    // append information to navbar
+    $("#weather").html("It is currently " + response.main.temp + "° (F) in " + response.name)    
+})
+
+}
+```
+
+## Author Links: 
+### - Bryan Jacinto: <br>
+Github: <br> https://github.com/bryanjacinto1994 <br>
+Linkedin: <br> https://www.linkedin.com/in/bryan-jacinto-100438aa/
+### - Mahisha Gunasekaran: <br>
+Github: <br>https://github.com/Mahi-Mani <br>
+Linkedin: <br> https://www.linkedin.com/in/mahisha-gunasekaran-0a780a88
+
+### - Kerwin Hy: <br>
+Github: <br>https://github.com/seiretsym <br>
+Linkedin: <br> https://www.linkedin.com/in/kerwinhy/
