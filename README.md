@@ -27,12 +27,13 @@ A site that combines exercising with other aspects to make it more enjoyable. Th
 ## Learning Experience
 - Learned about Spotify SDK
 - Learned about Firebase Authentication
+- Learned about different APIs
+- Gained a lot of debugging experience while merging files
 
 ## Site Picture
 
 
 ## Code Snippet
-Something here
 
 ```
 // do something when user auth state changes
@@ -81,6 +82,45 @@ $("#logoutBtn").on("click", function() {
         }, 2000);
     }, 3000);
 })
+```
+//***************************************************************************************************************************
+//                              Functionality of Trail API
+//***************************************************************************************************************************
+```
+function apiCall(startLat, startLong){
+        // Query URL that retrieves data using latitude and longitude
+        queryURL = "https://www.hikingproject.com/data/get-trails?lat=" + startLat + "&lon=" + startLong + "&maxDistance=10&key=200595352-77e13f2d759dbcd29bbde8b635ba9b65";
+            // Querying the base URL to get required response using AJAX method
+            $.ajax({
+                url : queryURL,
+                method : "GET"
+            }).then(function(response){
+                console.log(response);
+                // Iterating through the response array
+                for(var i=0; i<7; i++){
+                // Creating new div to append images to the html page
+                var newDiv = $("<div>");
+                // Create active class for first image received as response
+                    if(i === 0){
+                   newDiv.addClass("carousel-item active");
+                    }
+                    // Create non active class for rest of images received
+                    else{
+                    newDiv.addClass("carousel-item");
+                    }
+                    // Creating new image tag and appending to div
+                //    var imgBtn = $("<button>");
+                //    imgBtn.attr("id","image" + i)
+                   var imageTag = $("<img>");
+                   imageTag.attr("id","imgBtn"+i);
+                   imageTag.attr("src",response.trails[i].imgMedium);
+                   imageTag.attr("style","height: 600px; width: 300px");
+                   imageTag.addClass("imageBtn d-block w-100 shadow-lg p-3 mb-5 bg-dark rounded");
+                   imageTag.attr("alt",i);
+                //    imgBtn.append(imageTag);
+                   newDiv.append(imageTag);
+                   $("#imgDiv").append(newDiv);
+                }
 ```
 
 ## Links
