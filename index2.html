@@ -16,6 +16,62 @@
 <body>
   
   <div class="container">
+    <!-- First Row -->
+    <div class="row">
+        <div class="col-md-12">
+          <nav class="navbar navbar-dark bg-dark navbar-inverse navbar-fixed-top shadow-lg p-3 mb-5 bg-dark rounded">
+            <div class="pos-f-t">
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                  <li class="nav-item active">
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                      aria-haspopup="true" aria-expanded="false">
+                      User
+                    </a>
+  
+                    <button type="button" id="loginBtn" class="btn bg-dark" data-toggle="modal" data-target="#exampleModal"
+                      style="color: white;">
+                      Login
+                    </button>
+  
+                    <button type="button" id="logoutBtn" class="btn bg-dark d-none" data-toggle="modal" data-target="#exampleModal"
+                      style="color: white;">
+                      Logout
+                    </button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                      aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+                          </div>
+                          <div class="modal-body">
+                              <div id="loginui"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  </div>
+              
+            </div>
+            <!-- weather info -->
+            <div class="float-right text-white">
+              <div id="weather"></div>
+            </div>
+          </nav>
+          </nav>
+        </div>
+      </div>
+  
+      <hr>
     <!-- Header -->
     <div class="text-center">
       <a href="index.html" style="color: white;"><img src="logo1_transparent.png" class="justify-content-center"></a>
@@ -25,84 +81,29 @@
       <div class="row">
         <div class="col-md-8 bg-dark m-0 p-0">
           <a href="index.html">
-            <button type="button" id="loginBtn" class="btn bg-dark w-100 mx-auto p-3" style="color: white;">
+            <button type="button" class="btn bg-dark w-100 mx-auto p-3" style="color: white;">
               Home
             </button>
           </a>
           <hr class="m-0">
           <a href="index1.html">
-            <button type="button" id="loginBtn" class="btn bg-dark w-100 mx-auto p-3" style="color: white;">
+            <button type="button" class="btn bg-dark w-100 mx-auto p-3" style="color: white;">
               Workout
             </button>
           </a>
           <hr class="m-0">
           <a href="index2.html">
-            <button type="button" id="loginBtn" class="btn bg-dark w-100 mx-auto p-3" style="color: white;">
+            <button type="button" class="btn bg-dark w-100 mx-auto p-3" style="color: white;">
               Jogging
             </button>
           </a>
         </div>
         <div class="col-md-4 m-0 p-0">
-            <p class="bg-dark text-white p-3">Links</p>
+            <p id="links" class="bg-dark text-white p-3">Links</p>
         </div>
       </div>
     </div>
-    <!-- First Row -->
-    <div class="row">
-      <div class="col-md-12">
-        <nav class="navbar navbar-dark bg-dark navbar-inverse navbar-fixed-top shadow-lg p-3 mb-5 bg-dark rounded">
-          <div class="pos-f-t">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
-                    User
-                  </a>
-
-                  <button type="button" id="loginBtn" class="btn bg-dark" data-toggle="modal" data-target="#exampleModal"
-                    style="color: white;">
-                    Login
-                  </button>
-
-                  <button type="button" id="logoutBtn" class="btn bg-dark d-none" data-toggle="modal" data-target="#exampleModal"
-                    style="color: white;">
-                    Logout
-                  </button>
-                  <!-- Modal -->
-                  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
-                    aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="modal-title" id="exampleModalLabel">Login</h5>
-                        </div>
-                        <div class="modal-body">
-                            <div id="loginui"></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                </div>
-            
-          </div>
-          <!-- weather info -->
-          <div class="float-right text-white">
-            <div id="weather"></div>
-          </div>
-        </nav>
-        </nav>
-      </div>
-    </div>
-
-    <hr>
+    
 
 
     <div class="text-center" style="font-size: 40px;">
@@ -231,7 +232,7 @@
     <hr>
     <br>
     <div id="spotify" class="position-fixed" style="top: 30%; right: -300px">
-      <img src="./assets/images/spotify.png" class="float-left" height="35px">
+      <img id="spotifyImg" src="./assets/images/spotify.png" class="float-left" height="35px">
       <iframe src="https://open.spotify.com/embed/playlist/48Ngr8DUGGxAd7xQjFNXDG" width="300" height="380"
         frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
     </div>
