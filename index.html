@@ -6,7 +6,6 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="test.css">
-  <link rel="stylesheet" href="scrollreveal.css">
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -16,39 +15,13 @@
 </head>
 
 <body>
-    <!-- Login Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+  <!-- Login Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
     aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Login</h5>
-  <div class="container">
-    <!-- Header -->
-    <div class="text-center">
-      <a href= "index.html" style ="color: white;"><img src="logo1_transparent.png" class="justify-content-center"></a>
-    </div>
-    <!-- Slide Bar Links -->
-    <div id="slideLinks" class="position-fixed" style="width: 200px; left: -138px; top: 30%">
-      <div class="row">
-        <div class="col-md-8 bg-dark m-0 p-0">
-          <a href="index.html">
-            <button type="button" class="btn bg-dark w-100 mx-auto p-3" style="color: white;">
-              Home
-            </button>
-          </a>
-          <hr class="m-0">
-          <a href="index1.html">
-            <button type="button" class="btn bg-dark w-100 mx-auto p-3" style="color: white;">
-              Workout
-            </button>
-          </a>
-          <hr class="m-0">
-          <a href="index2.html">
-            <button type="button" class="btn bg-dark w-100 mx-auto p-3" style="color: white;">
-              Jogging
-            </button>
-          </a>
         </div>
         <div class="modal-body">
           <div id="loginui"></div>
@@ -56,6 +29,7 @@
       </div>
     </div>
   </div>
+
   <!-- nav bar -->
   <nav class="navbar navbar-dark bg-dark navbar-inverse navbar-fixed-top shadow-lg p-3 mb-5 bg-dark rounded">
     <div class="pos-f-t">
@@ -76,7 +50,7 @@
   </nav>
 
   <!-- Slide Bar Links -->
-  <div id="slideLinks" class="position-fixed" style="width: 200px; left: -138px; top: 30%">
+  <div id="slideLinks" class="position-fixed" data-state="hidden" style="width: 200px; left: -138px; top: 30%">
     <div class="row">
       <div class="col-md-8 bg-dark m-0 p-0">
         <a href="index.html">
@@ -109,7 +83,7 @@
       <a href="index.html" style="color: white;"><img src="logo1_transparent.png" class="justify-content-center"></a>
     </div>
 
-    <!-- Second row -->
+    <!-- first row -->
     <br>
 
     <div class="row">
@@ -150,7 +124,7 @@
 
     <hr>
     <br>
-    <!-- Third Row -->
+    <!-- Second Row -->
     <div class="scroll">
       <div class="row">
         <div class="col-md-5">
@@ -187,7 +161,7 @@
   </div>
 
   <div id="spotify" class="position-fixed" style="top: 30%; right: -300px">
-    <img id="spotifyImg" src="./assets/images/spotify.png" class="float-left" height="35px">
+    <img id="spotifyImg" src="./assets/images/spotify.png" data-state="hidden" class="float-left" height="35px">
     <iframe src="https://open.spotify.com/embed/playlist/48Ngr8DUGGxAd7xQjFNXDG" width="300" height="380"
       frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
   </div>
