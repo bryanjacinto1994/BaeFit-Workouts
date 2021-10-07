@@ -172,10 +172,4 @@ $.ajax({
 ### - Bryan Jacinto: <br>
 Github: <br> https://github.com/bryanjacinto1994 <br>
 Linkedin: <br> https://www.linkedin.com/in/bryan-jacinto-100438aa/
-### - Mahisha Gunasekaran: <br>
-Github: <br>https://github.com/Mahi-Mani <br>
-Linkedin: <br> https://www.linkedin.com/in/mahisha-gunasekaran-0a780a88
 
-### - Kerwin Hy: <br>
-Github: <br>https://github.com/seiretsym <br>
-Linkedin: <br> https://www.linkedin.com/in/kerwinhy/
